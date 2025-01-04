@@ -1,13 +1,15 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View } from 'react-native';
+import { ImageBackground, StyleSheet, View, Text } from 'react-native';
 
 function WelcomeScreen(props) {
     return (
         <ImageBackground
-            source={require("../assets/favicon.png")}
+            source={require("../assets/Electrium Anti-Spark V3.0.png")}
             style={styles.background}
         >
-            <View style={styles.loginButton}></View>
+            <View style={styles.loginButton}>
+                <Text>Login</Text>
+            </View>
         </ImageBackground>
     );
 }
@@ -15,12 +17,17 @@ function WelcomeScreen(props) {
 const styles = StyleSheet.create({
     background: {
         flex: 1,
-        justifyContent: "flex-end"
+        justifyContent: "center",
+        alignItems: "center",
     },
     loginButton: {
-        width: '100%',
-        height: 70,
+        width: '50%',
+        height: '10%',
         backgroundColor: '#4ecdc4'
+    },
+    text: {
+        justifyContent: "center",
+        alignItems: "center",
     }
 })
 
