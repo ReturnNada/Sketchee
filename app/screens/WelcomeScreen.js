@@ -4,7 +4,6 @@ import { ImageBackground, StyleSheet, View, Text } from 'react-native';
 function WelcomeScreen(props) {
     return (
         <ImageBackground
-            source={require("../assets/Electrium Anti-Spark V3.0.png")}
             style={styles.background}
         >
             <View style={styles.loginButton}>
