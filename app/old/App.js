@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet, ScrollView } from 'react-nat
 import { initializeApp } from '@firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from '@firebase/auth';
 
-import DrawingScreen from './app/screens/DrawingScreen';
+import DrawingScreen from './screens/DrawingScreen';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -23,7 +23,7 @@ const app = initializeApp(firebaseConfig);
 const AuthScreen = ({ email, setEmail, password, setPassword, isLogin, setIsLogin, handleAuthentication }) => {
   return (
     <View style={styles.authContainer}>
-       <Text style={styles.title}>{isLogin ? 'Sign In' : 'Sign Up'}</Text>
+       <Text style={styles.title}>Sketchee</Text>
 
        <TextInput
         style={styles.input}
@@ -40,12 +40,12 @@ const AuthScreen = ({ email, setEmail, password, setPassword, isLogin, setIsLogi
         secureTextEntry
       />
       <View style={styles.buttonContainer}>
-        <Button title={isLogin ? 'Sign In' : 'Sign Up'} onPress={handleAuthentication} color="#3498db" />
+        <Button title={isLogin ? 'Log In' : 'Sign Up'} onPress={handleAuthentication} color={isLogin ? "#3498db" : "#4ec28c"} />
       </View>
 
       <View style={styles.bottomContainer}>
         <Text style={styles.toggleText} onPress={() => setIsLogin(!isLogin)}>
-          {isLogin ? 'Need an account? Sign Up' : 'Already have an account? Sign In'}
+          {isLogin ? 'Need an account? Sign Up' : 'Already have an account? Log In'}
         </Text>
       </View>
     </View>
